@@ -1,0 +1,239 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f5f0;  /* tom quente de padaria */
+    color: #4a3b2f;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #d94e4e, #b33b3b);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+header h1 span {
+    font-weight: 700;
+    color: #ffe066;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav {
+    background-color: #5a3e2b;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #f9e0c0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc80;
+    color: #3e2a1a;
+}
+
+main {
+    padding: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fff9f0;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    border: 1px solid #f0d9c0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #b33b3b;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #6b4f3a;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #d94e4e;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #b33b3b;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin: 0 3px;
+}
+
+.btn-warning {
+    background-color: #ff9800;
+}
+.btn-warning:hover {
+    background-color: #e68900;
+}
+.btn-danger {
+    background-color: #dc3545;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.table th {
+    background-color: #5a3e2b;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+}
+
+.table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eedbcb;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover {
+    background-color: #fef6ed;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #5a3e2b;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eedbcb;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #d94e4e;
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.acoes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: #3e2e22;
+    color: #e0c8b0;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+

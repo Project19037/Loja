@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xìngfú líng shí</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Xìngfú <span>líng shí</span></h1>
+        <p>Os melhores pãezinhos chineses da cidade</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Início</a></li>
+            <li><a th:href="@{/clientes}">Clientes</a></li>
+            <li><a th:href="@{/produtos}">Produtos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="card-grid">
+            <div class="card">
+                <h2>👥 Clientes</h2>
+                <p>Cadastre e gerencie seus clientes.</p>
+                <a th:href="@{/clientes}" class="btn">Acessar</a>
+            </div>
+            <div class="card">
+                <h2>🥟 Produtos</h2>
+                <p>Controle seu estoque de pãezinhos.</p>
+                <a th:href="@{/produtos}" class="btn">Acessar</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Xìngfú líng shí - Sabor e tradição</p>
+    </footer>
+</div>
+</body>
+</html>

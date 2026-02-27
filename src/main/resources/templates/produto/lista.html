@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos - Xìngfú líng shí</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Xìngfú <span>líng shí</span></h1>
+        <p>Gestão de Produtos</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Início</a></li>
+            <li><a th:href="@{/clientes}">Clientes</a></li>
+            <li><a th:href="@{/produtos}">Produtos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2>Lista de Produtos</h2>
+            <a th:href="@{/produtos/novo}" class="btn">Novo Produto</a>
+        </div>
+
+        <div th:if="${mensagem}" class="alert alert-success" th:text="${mensagem}"></div>
+        <div th:if="${erro}" class="alert alert-danger" th:text="${erro}"></div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="produto : ${produtos}">
+                <td th:text="${produto.id}">1</td>
+                <td th:text="${produto.nome}">Pão de porco</td>
+                <td th:text="${produto.descricao}">Tradicional</td>
+                <td th:text="${produto.preco}">R$ 5,00</td>
+                <td th:text="${produto.quantidadeEstoque}">50</td>
+                <td class="acoes">
+                    <a th:href="@{/produtos/editar/{id}(id=${produto.id})}" class="btn btn-small btn-warning">Editar</a>
+                    <a th:href="@{/produtos/excluir/{id}(id=${produto.id})}" class="btn btn-small btn-danger" onclick="return confirm('Confirma exclusão?')">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2025 Xìngfú líng shí</p>
+    </footer>
+</div>
+</body>
+</html>

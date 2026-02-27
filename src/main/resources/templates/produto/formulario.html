@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:if="${produto.id == null}">Novo Produto</title>
+    <title th:unless="${produto.id == null}">Editar Produto</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Xìngfú <span>líng shí</span></h1>
+        <p th:if="${produto.id == null}">Novo Produto</p>
+        <p th:unless="${produto.id == null}">Editar Produto</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Início</a></li>
+            <li><a th:href="@{/clientes}">Clientes</a></li>
+            <li><a th:href="@{/produtos}">Produtos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form th:action="@{/produtos/salvar}" th:object="${produto}" method="post">
+            <input type="hidden" th:field="*{id}">
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" th:field="*{nome}" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" th:field="*{descricao}" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="preco">Preço (R$):</label>
+                <input type="number" step="0.01" id="preco" th:field="*{preco}" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantidadeEstoque">Quantidade em Estoque:</label>
+                <input type="number" id="quantidadeEstoque" th:field="*{quantidadeEstoque}" class="form-control" required>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <button type="submit" class="btn">Salvar</button>
+                <a th:href="@{/produtos}" class="btn btn-warning">Cancelar</a>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Xìngfú líng shí</p>
+    </footer>
+</div>
+</body>
+</html>
